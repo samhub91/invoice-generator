@@ -1,0 +1,1 @@
+// This file is not needed when using standalone components. You can delete it or leave it empty.

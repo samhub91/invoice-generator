@@ -1,0 +1,11 @@
+<form (ngSubmit)="selectCustomer()" #customerForm="ngForm">
+  <div>
+    <label for="customer-name">Name:</label>
+    <input id="customer-name" type="text" [(ngModel)]="customer.name" name="name" required />
+  </div>
+  <div>
+    <label for="customer-email">Email:</label>
+    <input id="customer-email" type="email" [(ngModel)]="customer.email" name="email" />
+  </div>
+  <button type="submit" [disabled]="!customer.name">Select Customer</button>
+</form>

@@ -1,0 +1,22 @@
+<h2>Create New Invoice</h2>
+
+<app-customer-form (customerSelected)="onCustomerSelected($event)"></app-customer-form>
+
+<hr />
+
+<app-product-selector (productAdded)="onProductAdded($event)"></app-product-selector>
+
+<hr />
+
+<app-invoice-table 
+  [items]="invoiceItems" 
+  (itemRemoved)="onItemRemoved($event)">
+</app-invoice-table>
+
+<div class="totals">
+  <p>Subtotal: {{ subtotal | currency }}</p>
+  <p>Tax (10%): {{ tax | currency }}</p>
+  <p><strong>Total: {{ total | currency }}</strong></p>
+</div>
+
+<button (click)="saveInvoice()">Save Invoice</button>

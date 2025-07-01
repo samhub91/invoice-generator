@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>Invoice History</h2>
+  <table *ngIf="invoices.length > 0">
+    <tr>
+      <th>Date</th>
+      <th>Customer</th>
+      <th>Total</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let invoice of invoices">
+      <td>{{ invoice.date | date:'short' }}</td>
+      <td>{{ invoice.customer.name }}</td>
+      <td>{{ invoice.total | currency }}</td>
+      <td><button (click)="viewInvoice(invoice.id)">View</button></td>
+    </tr>
+  </table>
+  <div *ngIf="invoices.length === 0">No invoices found.</div>
+</div>
